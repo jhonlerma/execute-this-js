@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Se la ejecuté en JavaScript</title>
+</head>
+<body>
+  <div id="main"></div>
+  <script>
+    (() => {
+      const UNIT = 'cm';
+      const mainContainer = document.getElementById('main');
+      const PENAUT = '#795C34';
+      const ericksPingA = {
+        backGroundColor: PENAUT,
+        bits: [
+          {
+            rectitude: 'rect',
+            splinters: ['no name', 'I call the big one Bitey'],
+            fuzz: true,
+            fuzzType: 'janitor willy\'s_beard'
+          },
+          {
+            rectitude: 'curly',
+            splinters: ['Donatello', 'Leonardo'],
+            fuzz: true,
+            fuzzType: 'rapunzel'
+          },
+          {
+            rectitude: 'like bannana',
+            splinters: [null],
+            fuzz: false,
+            fuzzType: null
+          },
+          {
+            rectitude: 'crocked',
+            splinters: ['mushroom', 'fat man', 'little boy', 'stuart'],
+            fuzz: true,
+            fuzzType: 'Hell Toupée'
+          },
+        ]
+      }
+      const executeThis = (pingA) => {
+        let readResult = '';
+        const readChunks = pingA.map((bit, index) => {
+          if (index == (pingA.length - 1)) {
+            readResult += `last bit analized... total length ${index +1}${UNIT}\n`
+          } else {
+            readResult += `bit number ${index + 1} analized...\n`
+          }
+          return `${index}${UNIT} -> ${JSON.stringify(bit)}\n`
+        })
+        return `${readResult}Resume Erick\'s ping_A:\n${readChunks}I say to you, i can execute that XD.`
+      }
+      mainContainer.innerText = executeThis(ericksPingA.bits);
+    })();
+  </script>
+</body>
+
+</html>
